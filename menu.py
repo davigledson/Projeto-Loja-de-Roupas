@@ -7,15 +7,29 @@
 
 
 #instalar as bibliotecas necessarias, no terminal copie e cole esses codigos
+#Plano A
+#python -m venv myvenv
+#venv\Scripts\activate
+
 #pip install PyQt6
 #python -m pip install mysql-connector-python
+
+#checar se está instalado no PC
+#pip show mysql-connector-python
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox
 
 
-import mysql.connector
+#import mysql.connector
+
+try:
+    import mysql.connector
+    print("Módulo mysql.connector importado com sucesso!")
+except ModuleNotFoundError as e:
+    print(f"Erro: {e}")
+
 
 conexao = mysql.connector.connect(
     host='localhost', user='root',
